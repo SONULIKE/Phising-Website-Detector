@@ -1,0 +1,9 @@
+URL,Feature1,Feature2,Feature3,Class
+http://phishing-site.com,0,1,0.3,1
+https://legit-website.com,1,0,0.8,0
+http://suspicious-link.org,0,1,0.2,1
+https://securebanking.com,1,0,0.9,0
+http://fake-login.net,0,1,0.1,1
+https://officialpage.com,1,0,0.85,0
+http://malicious-url.biz,0,1,0.15,1
+https://trustedsite.org,1,0,0.95,0

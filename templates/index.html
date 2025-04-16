@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detection</title>
+</head>
+<body>
+    <h2>Enter a URL to check if it is phishing or legitimate</h2>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL here">
+        <button type="submit">Check</button>
+    </form>
+
+    {% if prediction %}
+    <h3>Result for {{ url }}: <span>{{ prediction }}</span></h3>
+    {% endif %}
+
+    <hr>
+    <h3>Ask the chatbot about the site:</h3>
+    <input type="text" id="userMessage" placeholder="e.g. What is the title?">
+    <button onclick="sendMessage()">Send</button>
+    <p><strong>Bot:</strong> <span id="botReply">Waiting...</span></p>
+
+    <script>
+        function sendMessage() {
+            fetch("/chatbot", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: `message=${document.getElementById("userMessage").value}&url={{ url }}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("botReply").innerText = data.reply;
+            });
+        }
+    </script>
+</body>
+</html>
