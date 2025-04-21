@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detector</title>
+</head>
+<body>
+    <h2>Enter a URL to Check</h2>
+    <form method="post">
+        <label for="url">URL:</label>
+        <input type="text" name="url" required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>

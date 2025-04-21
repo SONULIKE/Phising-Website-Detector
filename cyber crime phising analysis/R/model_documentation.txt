@@ -1,0 +1,22 @@
+PHISHING WEBSITE DETECTION MODEL
+================================
+
+Model Type: Random Forest
+Created On: 2025-04-19 18:52:15 
+
+Performance Metrics:
+- Accuracy: 96.35 %
+- Sensitivity: 94.28 %
+- Specificity: 98 %
+- Precision: 97.4 %
+- F1 Score: 95.81 %
+
+Top 5 Most Important Features:
+1. SSLfinal_State (Importance: 1163.923)
+2. URL_of_Anchor (Importance: 939.3581)
+3. web_traffic (Importance: 211.8239)
+4. having_Sub_Domain (Importance: 192.7244)
+5. index (Importance: 166.0014)
+
+For using this model with new data, ensure the input features match those used during training.
+See the feature_importance.csv file for the complete list of features and their importance.

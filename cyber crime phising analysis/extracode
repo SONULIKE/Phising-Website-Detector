@@ -1,0 +1,12 @@
+args <- commandArgs(trailingOnly = TRUE)
+url_features <- as.numeric(strsplit(args[1], ",")[[1]])
+features <- read.csv("C:/coding/cyber crime phising analysis/feature_order.csv")
+model <- readRDS("C:/coding/cyber crime phising analysis/phishing_model.rds")
+
+# Convert to dataframe
+input_df <- as.data.frame(matrix(url_features, ncol = 30))
+colnames(input_df) <- features$Feature
+
+# Predict
+pred <- predict(model, input_df)
+cat(as.character(pred))
